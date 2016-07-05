@@ -8,3 +8,50 @@ h1 {
 	text-align: center;
 	color: fuchsia;
 }
+
+#header{
+	display: flex;
+    flex-direction: column;
+    background-color: #e1e8f0;
+    align-content: center;
+    text-align: center;
+    padding-top: 1em;
+
+}
+
+#app-title{
+	font-size: 2em;
+    padding: 0.5em;
+    color: #e62739;
+    background-color: snow;
+    width: 80%;
+    border-radius: 1em;
+    border: 1px #ddd solid;
+    margin: auto;
+}
+
+#nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2em;
+    padding-bottom: 1em;
+
+    a {
+    	text-decoration: none;
+    	cursor: pointer;
+	    letter-spacing: 0.2em;
+	    color: #85144b;
+	    font-weight: 700;
+    }
+}
+
+#task-title-bar{
+	display: flex;
+	justify-content: space-around;
+}
+
+.task-box{
+	display: flex;
+	justify-content: space-around;
+}
