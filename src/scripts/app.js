@@ -21,27 +21,16 @@ const app = function() {
 
 	var ToDoRouter = Backbone.Router.extend({
 		routes: {
-			"done": "_showDone",
-			"undone": "_showUndone",
-			"all" : "_showAll",
+			"tasks/:viewType": "_showTasks",
 			"*default": "_routeToAll",
 		},
 
 		_routeToAll: function(){
-			location.hash = 'all'
+			location.hash = 'tasks/all'
 		},
 
-		_showAll: function(){
-			ReactDOM.render(<HomeView taskColl = {taskCollection}/>,document.querySelector('.container'))
-		},
-
-		_showUndone: function(){
-			// console.log('here comes task collection in undone view',taskCollection)
-			ReactDOM.render(<UndoneTasksView taskColl={taskCollection}/>, document.querySelector('.container'))
-		},
-
-		_showDone: function(){
-			ReactDOM.render(<DoneTasksView taskColl={taskCollection}/>, document.querySelector('.container'))
+		_showTasks: function(viewType){
+			ReactDOM.render(<HomeView taskColl={taskCollection} viewType={viewType}/>,document.querySelector('.container'))
 		},
 
 		initialize: function(){

@@ -4,10 +4,7 @@ const Header = React.createClass({
 
 	_addTask: function(e){
 		if(e.keyCode === 13){
-			//create new task model and push it into collection
 			var taskStr = e.target.value
-			// console.log('this in render',this)
-			console.log('adding new task>>>  ',taskStr)
 			this.props.addNewTask(taskStr)
 			e.target.value = ''
 		}
@@ -23,9 +20,9 @@ const Header = React.createClass({
 					<input onKeyDown={this._addTask} placeholder="Enter a task"/>
 				</div>
 				<div id="nav-bar">
-					<a href="#all"><div>All</div></a>
-					<a href="#done"><div>Done</div></a>
-					<a href="#undone"><div>Undone</div></a>
+					<a href="#tasks/all"><div>All</div></a>
+					<a href="#tasks/done"><div>Done</div></a>
+					<a href="#tasks/undone"><div>Undone</div></a>
 				</div>
 			</div>
 		)

@@ -15,7 +15,6 @@ const UndoneTasksView = React.createClass({
 const ListWrapper = React.createClass({
 	
 	_undoneJsxArray: function(undoneTasks){
-		console.log('undone tasks jsx array >>> ', undoneTasks)
 		var incompleteTasks = undoneTasks.map(function (undoneTask){
 			return <Task undone={undoneTask}/>
 		})
@@ -33,7 +32,6 @@ const ListWrapper = React.createClass({
 
 const Task = React.createClass({
 	render: function(){
-		console.log(this.props.undone)
 	return(
 			<div id="undone-task">
 				<div className="undone-task-name"> {this.props.undone.attributes._taskName} </div>
